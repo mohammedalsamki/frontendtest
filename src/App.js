@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { withAuth0 } from "@auth0/auth0-react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './componant/Main';
+import Fav from './componant/Fav';
 
 
 class App extends Component {
@@ -22,6 +23,9 @@ class App extends Component {
           <Route exact path="/">
             <Main />
             </Route>
+            <Route path="/profile">
+            <Fav />
+          </Route>
         </Switch>
      </Router>
     )

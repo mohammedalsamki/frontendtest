@@ -26,7 +26,7 @@ export class Main extends Component {
     handleSubmit = (strDrink, strDrinkThumb) => {
         console.log('WORKED', strDrink, strDrinkThumb);
         let config = {
-            method: "POST", baseURL: `${BACKEND_URL}`, url: "/fav",
+            method: "POST", baseURL: `https://testbacknew.herokuapp.com`, url: "/fav",
             data: {
                 strDrink: strDrink,
                 strDrinkThumb: strDrinkThumb,
@@ -34,19 +34,20 @@ export class Main extends Component {
         }
         axios(config);
     }
+    
     render() {
         return (
-            <div class="row">
+            <div className="row">
                 {console.log('API', this.state.dataApi)}
                 {this.state.dataApi.map(item => {
                     return <>
-                        <Card style={{ width: '18rem' }}>
+                
+                    
+                        <Card style={{ width: '18rem' }} >
                             <Card.Title>{item.strDrink}</Card.Title>
                             <Card.Img variant="top" src={item.strDrinkThumb} />
                             <Card.Body>
-                                <Card.Text>
-                                    <h1>hi</h1>
-                                </Card.Text>
+                               
                                 <Button onClick={() => this.handleSubmit(item.strDrink, item.strDrinkThumb)} 
                                 variant="danger">Favorite</Button>
                             </Card.Body>
